@@ -1,4 +1,4 @@
-# publisher
+# PUBLISHER
 Docker image with tooling needed for deployments
 
 ## Available clis
