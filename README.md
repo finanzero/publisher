@@ -10,3 +10,4 @@ Docker image with tooling needed for deployments
 - Git
 - Ssh
 - CURL/WGET
+- Zip
