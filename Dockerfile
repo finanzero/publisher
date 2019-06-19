@@ -17,3 +17,4 @@ RUN rm -rf /opt/go && \
     go version
 
 RUN pip install awscli
+
