@@ -1,7 +1,11 @@
+FROM busybox
+
 FROM ubuntu:18.04
 
+COPY --from=0 /bin/busybox /bin/busybox
+
 RUN apt update && \
-    apt install -y python python-pip build-essential wget curl docker.io git groff zip rsync busybox && \
+    apt install -y python python-pip build-essential wget curl docker.io git groff zip rsync && \
     rm -rf /var/lib/apt/lists/*
 
 RUN wget -O /usr/local/bin/rdocker https://github.com/dvddarias/rdocker/raw/master/rdocker.sh && \
@@ -16,6 +20,6 @@ RUN rm -rf /opt/go && \
     rm -rf go.tar.gz && \
     go version
     
-RUN busybox --install
+RUN /bin/busybox --install
 
 RUN pip install awscli
