@@ -1,6 +1,6 @@
 FROM busybox
 
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 COPY --from=0 /bin/busybox /bin/busybox
 
