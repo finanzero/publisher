@@ -4,11 +4,12 @@ FROM alpine/git
 FROM ubuntu:18.04
 
 COPY --from=0 /bin/busybox /bin/busybox
-COPY --from=1 /usr/bin/git /usr/bin/git
 
 RUN apt update && \
-    apt install -y python python-pip build-essential wget curl docker.io groff zip rsync && \
+    apt install -y python python-pip build-essential wget curl git docker.io groff zip rsync && \
     rm -rf /var/lib/apt/lists/*
+
+COPY --from=1 /usr/bin/git /usr/bin/git
 
 RUN wget -O /usr/local/bin/rdocker https://github.com/dvddarias/rdocker/raw/master/rdocker.sh && \
     chmod +x /usr/local/bin/rdocker
