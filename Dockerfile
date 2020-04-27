@@ -1,8 +1,10 @@
 FROM busybox
+FROM alpine/git
 
 FROM ubuntu:20.04
 
 COPY --from=0 /bin/busybox /bin/busybox
+COPY --from=1 /usr/bin/git /usr/bin/git
 
 RUN apt update && \
     apt install -y python python-pip build-essential wget curl docker.io git groff zip rsync && \
