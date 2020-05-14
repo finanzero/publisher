@@ -9,3 +9,6 @@ RUN apk add aws-cli
 RUN apk add docker-cli
 RUN apk add bash
 RUN apk add zip
+RUN apk add make
+
+ENTRYPOINT /bin/bash
